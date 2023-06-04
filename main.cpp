@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include "back_end.h"
+#include "to_do_list.h"
 
 int main(int argc, char *argv[])
 {
@@ -15,6 +16,7 @@ int main(int argc, char *argv[])
 
 // load backend
     qmlRegisterType<BackEnd>("tungpt.BackEnd", 1, 0, "BackEnd");
+    qmlRegisterType<ToDoList>("tungpt.ToDoList", 1, 0, "ToDoList");
 
 
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

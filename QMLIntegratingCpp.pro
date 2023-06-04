@@ -10,7 +10,9 @@ CONFIG += c++17 #cmdline
 
 SOURCES += \
         back_end.cpp \
-        main.cpp
+        main.cpp \
+        to_do_list.cpp \
+        moc_to_do_list.cpp
 
 RESOURCES += qml.qrc
 
@@ -20,4 +22,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    back_end.h
+    back_end.h \
+    to_do_list.h
