@@ -1,6 +1,7 @@
 #QT = core
 
 QT += quick
+QT += widgets
 
 CONFIG += c++17 #cmdline
 

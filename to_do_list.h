@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QAbstractListModel>
+#include <QStyledItemDelegate>
 
 class ToDoItem
 {
@@ -42,6 +43,18 @@ protected:
 
 private:
     QList<ToDoItem> m_ToDoList;
+};
+
+class MyDelegate : public QStyledItemDelegate
+{
+public:
+    MyDelegate(QObject *parent = nullptr) : QStyledItemDelegate(parent) {}
+
+    void paint(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override
+    {
+        // implement custom painting logic here
+        QStyledItemDelegate::paint(painter, option, index);
+    }
 };
 
 #endif // TODOLIST_H
